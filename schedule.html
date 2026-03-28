@@ -9,133 +9,26 @@
     <meta name="robots" content="index, follow">
     <link rel="icon" type="image/x-icon" href="images/favicon.ico">
     <link rel="apple-touch-icon" href="images/favicon.png">
+    <script>
+        (function(){
+            const savedTheme = localStorage.getItem('theme') || 'dark';
+            if (savedTheme === 'light') {
+                document.documentElement.classList.add('light-theme');
+            }
+            document.documentElement.dataset.theme = savedTheme;
+        })();
+    </script>
     <title>Schedule | Nhywyll</title>
     <link rel="stylesheet" href="styles.css">
-    <style>
-        .schedule-hero {
-            background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--bg-card) 100%);
-            color: var(--text-primary);
-            padding: 6rem 2rem;
-            text-align: center;
-        }
-
-        .schedule-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            max-width: 1200px;
-            margin: 4rem auto;
-            padding: 0 2rem;
-        }
-
-        .schedule-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border-color);
-            border-radius: 15px;
-            padding: 2rem;
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-
-        .schedule-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
-        }
-
-        .day-header {
-            display: flex;
-            align-items: center;
-            margin-bottom: 1.5rem;
-            padding-bottom: 1rem;
-            border-bottom: 2px solid var(--accent-primary);
-        }
-
-        .day-name {
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: var(--accent-primary);
-            margin-right: 1rem;
-        }
-
-        .day-status {
-            padding: 0.5rem 1rem;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            font-weight: bold;
-            text-transform: uppercase;
-        }
-
-        .status-live {
-            background: #ff4757;
-            color: white;
-        }
-
-        .status-upcoming {
-            background: #ffa502;
-            color: white;
-        }
-
-        .status-offline {
-            background: var(--text-muted);
-            color: var(--bg-primary);
-        }
-
-        .stream-info {
-            margin-bottom: 1rem;
-        }
-
-        .stream-time {
-            font-weight: bold;
-            color: var(--accent-primary);
-            margin-bottom: 0.5rem;
-        }
-
-        .stream-title {
-            font-size: 1.1rem;
-            margin-bottom: 0.5rem;
-            color: var(--text-primary);
-        }
-
-        .stream-game {
-            color: var(--text-secondary);
-            font-style: italic;
-        }
-
-        .timezone-notice {
-            background: var(--bg-secondary);
-            padding: 2rem;
-            border-radius: 10px;
-            text-align: center;
-            margin: 2rem auto;
-            max-width: 800px;
-            border: 1px solid var(--border-color);
-        }
-
-        .timezone-notice h3 {
-            color: var(--accent-primary);
-            margin-bottom: 1rem;
-        }
-
-        .timezone-notice p {
-            color: var(--text-secondary);
-            margin-bottom: 0.5rem;
-        }
-
-        @media (max-width: 768px) {
-            .schedule-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
 </head>
 <body>
     <header>
         <nav>
-            <a href="index.html" style="text-decoration: none;"><img src="images/logo.png" alt="Nhywyll Logo" class="logo"></a>
+            <a href="index.html" class="logo-link"><img src="images/Logo.png" alt="Nhywyll Logo" class="logo" loading="eager"></a>
             <ul>
                 <li><a href="index.html" data-i18n="nav_home">Home</a></li>
-                <li><a href="about.html" data-i18n="nav_about">About</a></li>
                 <li><a href="schedule.html" data-i18n="nav_schedule">Schedule</a></li>
-                <li><a href="links.html" data-i18n="nav_streams">Links</a></li>
+                <li><a href="links.html" data-i18n="nav_links">Links</a></li>
                 <li><a href="contact.html" data-i18n="nav_contact">Contact</a></li>
             </ul>
             <div class="language-switcher">
@@ -147,21 +40,21 @@
     </header>
 
     <section class="schedule-hero">
-        <h1>Streaming Schedule</h1>
-        <p>When you can catch me live on Twitch!</p>
+        <h1 data-i18n="schedule_title">Streaming Schedule</h1>
+        <p data-i18n="schedule_subtitle">When you can catch me live on Twitch!</p>
     </section>
 
     <div class="timezone-notice">
-        <h3>⏰ Timezone Information</h3>
-        <p>All times are shown in <strong>Central European Time (CET)</strong></p>
-        <p>Convert to your timezone: <a href="https://www.timeanddate.com/worldclock/converter.html" target="_blank" style="color: var(--accent-primary);">Time Zone Converter</a></p>
+        <h3 data-i18n="timezone_title">⏰ Timezone Information</h3>
+        <p data-i18n="timezone_text">All times are shown in <strong>Central European Time (CET)</strong></p>
+        <p data-i18n-html="timezone_converter">Convert to your timezone: <a href="https://www.timeanddate.com/worldclock/converter.html" target="_blank" style="color: var(--accent-primary);">Time Zone Converter</a></p>
     </div>
 
     <div class="schedule-grid">
         <div class="schedule-card">
             <div class="day-header">
-                <span class="day-name">Monday</span>
-                <span class="day-status status-offline">Offline</span>
+                <span class="day-name" data-i18n="day_monday">Monday</span>
+                <span class="day-status status-offline" data-i18n="status_offline">Offline</span>
             </div>
             <div class="stream-info">
                 <p>Rest day - Preparing for the week ahead!</p>
@@ -170,8 +63,8 @@
 
         <div class="schedule-card">
             <div class="day-header">
-                <span class="day-name">Tuesday</span>
-                <span class="day-status status-live">Live Now</span>
+                <span class="day-name" data-i18n="day_tuesday">Tuesday</span>
+                <span class="day-status status-live" data-i18n="status_live">Live Now</span>
             </div>
             <div class="stream-info">
                 <p class="stream-time">8:00 PM - 11:00 PM CET</p>
@@ -182,8 +75,8 @@
 
         <div class="schedule-card">
             <div class="day-header">
-                <span class="day-name">Wednesday</span>
-                <span class="day-status status-upcoming">Upcoming</span>
+                <span class="day-name" data-i18n="day_wednesday">Wednesday</span>
+                <span class="day-status status-upcoming" data-i18n="status_upcoming">Upcoming</span>
             </div>
             <div class="stream-info">
                 <p class="stream-time">7:00 PM - 10:00 PM CET</p>
@@ -194,8 +87,8 @@
 
         <div class="schedule-card">
             <div class="day-header">
-                <span class="day-name">Thursday</span>
-                <span class="day-status status-upcoming">Upcoming</span>
+                <span class="day-name" data-i18n="day_thursday">Thursday</span>
+                <span class="day-status status-upcoming" data-i18n="status_upcoming">Upcoming</span>
             </div>
             <div class="stream-info">
                 <p class="stream-time">8:00 PM - 11:00 PM CET</p>
@@ -206,8 +99,8 @@
 
         <div class="schedule-card">
             <div class="day-header">
-                <span class="day-name">Friday</span>
-                <span class="day-status status-upcoming">Upcoming</span>
+                <span class="day-name" data-i18n="day_friday">Friday</span>
+                <span class="day-status status-upcoming" data-i18n="status_upcoming">Upcoming</span>
             </div>
             <div class="stream-info">
                 <p class="stream-time">9:00 PM - 12:00 AM CET</p>
@@ -218,8 +111,8 @@
 
         <div class="schedule-card">
             <div class="day-header">
-                <span class="day-name">Saturday</span>
-                <span class="day-status status-offline">Offline</span>
+                <span class="day-name" data-i18n="day_saturday">Saturday</span>
+                <span class="day-status status-offline" data-i18n="status_offline">Offline</span>
             </div>
             <div class="stream-info">
                 <p>Weekend break - Recharging for next week!</p>
@@ -228,8 +121,8 @@
 
         <div class="schedule-card">
             <div class="day-header">
-                <span class="day-name">Sunday</span>
-                <span class="day-status status-offline">Offline</span>
+                <span class="day-name" data-i18n="day_sunday">Sunday</span>
+                <span class="day-status status-offline" data-i18n="status_offline">Offline</span>
             </div>
             <div class="stream-info">
                 <p>Rest and creative work day</p>

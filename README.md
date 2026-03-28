@@ -1,36 +1,61 @@
-# test_website
-Wer das liest, hat kein Hobby. :P
+# 🌌 Nhywyll's Digital Home (Landing Page)
 
-# 🌌 Nhywyll's Digital Home (Landingpage)
-
-Welcome to the official source code for my portfolio and project site! 
+Welcome to the official source code for my portfolio and project website!
 This site is hosted via **GitHub Pages** and serves as a central hub for my VTubing activities.
 
 ## 🚀 Live Site
 Check it out here: [test.nhywyll.com](https://test.nhywyll.com)
 
-## 🛠️ Built With
-- **HTML5 & CSS3**: Custom layout and styling.
-- **JavaScript**: For interactive elements (like the Twitch Live-Status).
-- **VS Code & GitHub Copilot**: My primary development tools.
+## 📋 Overview
+This website is a responsive, multilingual landing page for Nhywyll, a VTuber streamer and content creator. It includes information about streams, social links, contact options, and more.
 
-## 📌 Features
-- [x] Responsive Design (Mobile & Desktop)
-- [x] Custom Domain Integration (Dynadot)
-- [x] HTTPS Encryption
-- [x] Dark/Light Mode Toggle
-- [x] Multilingual Support (EN/DE)
-- [x] Accessibility (WCAG 2.1 AA compliant)
-- [x] SEO Optimized (Meta tags, Open Graph, Sitemap)
-- [x] Contact Form (Mailto integration)
-- [x] Back-to-Top Button with Smooth Scrolling
-- [x] Skip Links for Screen Readers
-- [ ] Twitch API Live-Status (Future feature)
+## 🛠️ Technologies
+- **HTML5**: Semantic structure and accessibility
+- **CSS3**: Responsive design with CSS variables for themes
+- **JavaScript (ES6+)**: Interactivity, i18n, theme toggle
+- **VS Code & GitHub Copilot**: Development environment
+- **GitHub Pages**: Hosting
+
+## ✨ Features
+- [x] **Responsive Design**: Optimized for mobile, tablet, and desktop
+- [x] **Dark/Light Mode**: Automatic theme detection with localStorage
+- [x] **Multilingual (EN/DE)**: Full internationalization
+- [x] **Accessibility**: WCAG 2.1 AA compliant, screen-reader friendly
+- [x] **SEO Optimized**: Meta tags, Open Graph, sitemap
+- [x] **Contact Form**: Mailto integration for direct emails
+- [x] **Back-to-Top Button**: With smooth scrolling
+- [x] **Skip Links**: For screen readers
+- [x] **Social Links**: Twitch, YouTube, Discord, etc.
+- [x] **Partners & Affiliates**: Affiliate links
+- [ ] **Twitch API Live Status**: Future feature
+
+
+### Testing Theme & Language
+- **Theme Toggle**: Click on 🌙/☀️ in the navigation
+- **Language Switch**: Click on EN/DE in the navigation
+- Both settings are saved in localStorage
+
+## 📁 Project Structure
+```
+test_website/
+├── index.html          # Homepage
+├── schedule.html       # Streaming schedule
+├── links.html          # Social links & partners
+├── contact.html        # Contact & collaboration
+├── imprint.html        # Imprint & privacy
+├── styles.css          # Main stylesheet
+├── script.js           # JavaScript for interactivity
+├── images/             # Images and logos
+└── README.md           # This file
+```
 
 ## ⚖️ Legal & Privacy
-This repository contains the frontend code for my private/commercial hybrid project. 
-- **Imprint/Impressum:** Available on the live site.
-- **License:** All creative assets (Avatars, Lore, Images) are Ⓒ Nhywyll. The code itself is for educational purposes.
+This repository contains the frontend code for my private/commercial hybrid project, intended mostly as a personal portfolio.
+- **Imprint**: Available on the live site.
+- **License**: All creative assets (avatars, lore, images) are © Nhywyll. The code is for educational purposes, mostly for myself.
+
+## 🤝 Contributing
+As this is a personal project, contributions are not planned. But feedback is welcome!
 
 ---
 *Created with 💜 by Nhywyll*
