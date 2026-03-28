@@ -129,3 +129,63 @@ document.querySelectorAll('.lang-btn').forEach(btn => {
 });
 
 setLanguage(currentLanguage);
+
+// Contact form handler
+const contactForm = document.getElementById('contact-form');
+if (contactForm) {
+    contactForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        const name = document.getElementById('name').value;
+        const email = document.getElementById('email').value;
+        const message = document.getElementById('message').value;
+        
+        const subject = `Message from ${name} via Nhywyll Website`;
+        const body = `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`;
+        
+        const mailtoLink = `mailto:nhywyll@outlook.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+        
+        window.location.href = mailtoLink;
+    });
+}
+
+// Theme toggle functionality
+let currentTheme = localStorage.getItem('theme') || 'dark';
+
+function setTheme(theme) {
+    currentTheme = theme;
+    localStorage.setItem('theme', theme);
+    
+    if (theme === 'light') {
+        document.body.classList.add('light-theme');
+        document.getElementById('theme-toggle').textContent = '☀️';
+        document.getElementById('theme-toggle').setAttribute('aria-label', 'Switch to dark theme');
+    } else {
+        document.body.classList.remove('light-theme');
+        document.getElementById('theme-toggle').textContent = '🌙';
+        document.getElementById('theme-toggle').setAttribute('aria-label', 'Switch to light theme');
+    }
+}
+
+const themeToggle = document.getElementById('theme-toggle');
+if (themeToggle) {
+    themeToggle.addEventListener('click', () => {
+        setTheme(currentTheme === 'dark' ? 'light' : 'dark');
+    });
+}
+
+setTheme(currentTheme);
+
+// Smooth scrolling for internal links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+            target.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }
+    });
+});

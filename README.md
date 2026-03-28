@@ -18,8 +18,14 @@ Check it out here: [test.nhywyll.com](https://test.nhywyll.com)
 - [x] Responsive Design (Mobile & Desktop)
 - [x] Custom Domain Integration (Dynadot)
 - [x] HTTPS Encryption
-- [ ] Twitch API Live-Status (In Progress)
-- [ ] Multilingual Support (EN/DE)
+- [x] Dark/Light Mode Toggle
+- [x] Multilingual Support (EN/DE)
+- [x] Accessibility (WCAG 2.1 AA compliant)
+- [x] SEO Optimized (Meta tags, Open Graph, Sitemap)
+- [x] Contact Form (Mailto integration)
+- [x] Back-to-Top Button with Smooth Scrolling
+- [x] Skip Links for Screen Readers
+- [ ] Twitch API Live-Status (Future feature)
 
 ## ⚖️ Legal & Privacy
 This repository contains the frontend code for my private/commercial hybrid project. 

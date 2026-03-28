@@ -7,6 +7,21 @@
     <meta name="keywords" content="VTuber, streamer, gaming, digital art, content creator, Twitch, YouTube, Nhywyll">
     <meta name="author" content="Nhywyll">
     <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://nhywyll.com/">
+    <meta property="og:title" content="Nhywyll - VTuber Streamer & Content Creator">
+    <meta property="og:description" content="VTuber Streamer, Content Creator & Digital Artist. Join live gaming streams, watch digital art creation, and connect with the community.">
+    <meta property="og:image" content="https://nhywyll.com/og-image.jpg">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://nhywyll.com/">
+    <meta property="twitter:title" content="Nhywyll - VTuber Streamer & Content Creator">
+    <meta property="twitter:description" content="VTuber Streamer, Content Creator & Digital Artist. Join live gaming streams, watch digital art creation, and connect with the community.">
+    <meta property="twitter:image" content="https://nhywyll.com/og-image.jpg">
+    
     <title data-i18n="page_title">Nhywyll - VTuber Streamer & Content Creator</title>
     <link rel="stylesheet" href="styles.css">
     <style>
@@ -221,6 +236,7 @@
     </style>
 </head>
 <body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
     <header>
         <nav>
             <a href="index.html" style="text-decoration: none;"><h1>✨ Nhywyll</h1></a>
@@ -233,6 +249,7 @@
                 <button class="lang-btn active" data-lang="en">EN</button>
                 <button class="lang-btn" data-lang="de">DE</button>
             </div>
+            <button id="theme-toggle" class="theme-btn" aria-label="Toggle theme" title="Toggle between dark and light theme">🌙</button>
         </nav>
     </header>
 
@@ -246,7 +263,7 @@
         </div>
     </section>
 
-    <div class="container">
+    <main id="main-content">
         <section>
             <h2 data-i18n="streams_title">What I Stream</h2>
             <div class="cards">
@@ -289,17 +306,19 @@
             <div style="text-align: center; margin-top: 3rem;">
                 <h3 style="color: #667eea; margin-bottom: 1.5rem;" data-i18n="contact_social">Follow Me On Social Media</h3>
                 <div class="social-icons">
-                    <a href="https://twitch.tv" target="_blank" class="social-icon" title="Twitch">🎮</a>
-                    <a href="https://youtube.com" target="_blank" class="social-icon" title="YouTube">📺</a>
-                    <a href="https://twitter.com" target="_blank" class="social-icon" title="Twitter">𝕏</a>
-                    <a href="https://discord.gg" target="_blank" class="social-icon" title="Discord">💬</a>
-                    <a href="https://instagram.com" target="_blank" class="social-icon" title="Instagram">📸</a>
+                    <a href="https://twitch.tv" target="_blank" class="social-icon" title="Twitch" aria-label="Follow Nhywyll on Twitch">🎮</a>
+                    <a href="https://youtube.com" target="_blank" class="social-icon" title="YouTube" aria-label="Subscribe to Nhywyll on YouTube">📺</a>
+                    <a href="https://twitter.com" target="_blank" class="social-icon" title="Twitter" aria-label="Follow Nhywyll on X (Twitter)">𝕏</a>
+                    <a href="https://discord.gg" target="_blank" class="social-icon" title="Discord" aria-label="Join Nhywyll's Discord server">💬</a>
+                    <a href="https://instagram.com" target="_blank" class="social-icon" title="Instagram" aria-label="Follow Nhywyll on Instagram">📸</a>
                 </div>
             </div>
         </section>
-    </div>
+    </main>
 
     <footer>&copy; 2026 Nhywyll · All rights reserved | <a href="imprint.html" data-i18n="imprint_link">Imprint</a></footer>
+
+    <button class="back-to-top" aria-label="Back to top" title="Scroll to top">↑</button>
 
     <script src="script.js"></script>
 </body>
