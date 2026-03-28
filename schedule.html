@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Nhywyll's streaming schedule and calendar. Check when I'm live on Twitch, what games I'm playing, and join the stream!">
+    <meta name="keywords" content="streaming schedule, Twitch schedule, VTuber calendar, live streams, gaming schedule">
+    <meta name="author" content="Nhywyll">
+    <meta name="robots" content="index, follow">
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+    <link rel="apple-touch-icon" href="images/favicon.png">
+    <title>Schedule | Nhywyll</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .schedule-hero {
+            background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--bg-card) 100%);
+            color: var(--text-primary);
+            padding: 6rem 2rem;
+            text-align: center;
+        }
+
+        .schedule-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 4rem auto;
+            padding: 0 2rem;
+        }
+
+        .schedule-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 15px;
+            padding: 2rem;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .schedule-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+        }
+
+        .day-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid var(--accent-primary);
+        }
+
+        .day-name {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--accent-primary);
+            margin-right: 1rem;
+        }
+
+        .day-status {
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        .status-live {
+            background: #ff4757;
+            color: white;
+        }
+
+        .status-upcoming {
+            background: #ffa502;
+            color: white;
+        }
+
+        .status-offline {
+            background: var(--text-muted);
+            color: var(--bg-primary);
+        }
+
+        .stream-info {
+            margin-bottom: 1rem;
+        }
+
+        .stream-time {
+            font-weight: bold;
+            color: var(--accent-primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .stream-title {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-primary);
+        }
+
+        .stream-game {
+            color: var(--text-secondary);
+            font-style: italic;
+        }
+
+        .timezone-notice {
+            background: var(--bg-secondary);
+            padding: 2rem;
+            border-radius: 10px;
+            text-align: center;
+            margin: 2rem auto;
+            max-width: 800px;
+            border: 1px solid var(--border-color);
+        }
+
+        .timezone-notice h3 {
+            color: var(--accent-primary);
+            margin-bottom: 1rem;
+        }
+
+        .timezone-notice p {
+            color: var(--text-secondary);
+            margin-bottom: 0.5rem;
+        }
+
+        @media (max-width: 768px) {
+            .schedule-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html" style="text-decoration: none;"><img src="images/logo-white.png" alt="Nhywyll Logo" class="logo"></a>
+            <ul>
+                <li><a href="index.html" data-i18n="nav_home">Home</a></li>
+                <li><a href="about.html" data-i18n="nav_about">About</a></li>
+                <li><a href="schedule.html" data-i18n="nav_schedule">Schedule</a></li>
+                <li><a href="social.html" data-i18n="nav_streams">Socials</a></li>
+                <li><a href="contact.html" data-i18n="nav_contact">Contact</a></li>
+            </ul>
+            <div class="language-switcher">
+                <button class="lang-btn active" data-lang="en">EN</button>
+                <button class="lang-btn" data-lang="de">DE</button>
+            </div>
+            <button id="theme-toggle" class="theme-btn" aria-label="Toggle theme" title="Toggle between dark and light theme">🌙</button>
+        </nav>
+    </header>
+
+    <section class="schedule-hero">
+        <h1>Streaming Schedule</h1>
+        <p>When you can catch me live on Twitch!</p>
+    </section>
+
+    <div class="timezone-notice">
+        <h3>⏰ Timezone Information</h3>
+        <p>All times are shown in <strong>Central European Time (CET)</strong></p>
+        <p>Convert to your timezone: <a href="https://www.timeanddate.com/worldclock/converter.html" target="_blank" style="color: var(--accent-primary);">Time Zone Converter</a></p>
+    </div>
+
+    <div class="schedule-grid">
+        <div class="schedule-card">
+            <div class="day-header">
+                <span class="day-name">Monday</span>
+                <span class="day-status status-offline">Offline</span>
+            </div>
+            <div class="stream-info">
+                <p>Rest day - Preparing for the week ahead!</p>
+            </div>
+        </div>
+
+        <div class="schedule-card">
+            <div class="day-header">
+                <span class="day-name">Tuesday</span>
+                <span class="day-status status-live">Live Now</span>
+            </div>
+            <div class="stream-info">
+                <p class="stream-time">8:00 PM - 11:00 PM CET</p>
+                <p class="stream-title">🎨 Digital Art Stream</p>
+                <p class="stream-game">Creating fan art and character designs</p>
+            </div>
+        </div>
+
+        <div class="schedule-card">
+            <div class="day-header">
+                <span class="day-name">Wednesday</span>
+                <span class="day-status status-upcoming">Upcoming</span>
+            </div>
+            <div class="stream-info">
+                <p class="stream-time">7:00 PM - 10:00 PM CET</p>
+                <p class="stream-title">🎮 Gaming Session</p>
+                <p class="stream-game">Story-driven RPG adventure</p>
+            </div>
+        </div>
+
+        <div class="schedule-card">
+            <div class="day-header">
+                <span class="day-name">Thursday</span>
+                <span class="day-status status-upcoming">Upcoming</span>
+            </div>
+            <div class="stream-info">
+                <p class="stream-time">8:00 PM - 11:00 PM CET</p>
+                <p class="stream-title">💬 Community Night</p>
+                <p class="stream-game">Games, chat, and viewer requests</p>
+            </div>
+        </div>
+
+        <div class="schedule-card">
+            <div class="day-header">
+                <span class="day-name">Friday</span>
+                <span class="day-status status-upcoming">Upcoming</span>
+            </div>
+            <div class="stream-info">
+                <p class="stream-time">9:00 PM - 12:00 AM CET</p>
+                <p class="stream-title">🎯 Variety Stream</p>
+                <p class="stream-game">Indie games and special surprises</p>
+            </div>
+        </div>
+
+        <div class="schedule-card">
+            <div class="day-header">
+                <span class="day-name">Saturday</span>
+                <span class="day-status status-offline">Offline</span>
+            </div>
+            <div class="stream-info">
+                <p>Weekend break - Recharging for next week!</p>
+            </div>
+        </div>
+
+        <div class="schedule-card">
+            <div class="day-header">
+                <span class="day-name">Sunday</span>
+                <span class="day-status status-offline">Offline</span>
+            </div>
+            <div class="stream-info">
+                <p>Rest and creative work day</p>
+            </div>
+        </div>
+    </div>
+
+    <footer>&copy; 2026 Nhywyll · All rights reserved | <a href="imprint.html" data-i18n="imprint_link">Imprint</a></footer>
+
+    <button class="back-to-top" aria-label="Back to top" title="Scroll to top">↑</button>
+
+    <script src="script.js"></script>
+</body>
+</html>
