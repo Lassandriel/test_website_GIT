@@ -3,20 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact | Nhywyll</title>
+    <meta name="description" content="Contact Nhywyll for business inquiries, partnerships, fan support, and collaborations. Get in touch with the VTuber streamer and content creator.">
+    <meta name="keywords" content="contact VTuber, streamer contact, business inquiries, Nhywyll email, partnerships">
+    <meta name="author" content="Nhywyll">
+    <meta name="robots" content="index, follow">
+    <title data-i18n="page_title_contact">Contact | Nhywyll</title>
+    <link rel="stylesheet" href="styles.css">
     <style>
-        * { margin:0; padding:0; box-sizing:border-box; }
-        body { font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background:#0f0f0f; color:#fff; }
-        header { background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); color: white; padding: 1rem 0; box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3); position: sticky; top: 0; z-index: 100; }
-        nav { display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
-        nav h1 { font-size: 1.8rem; font-weight: 700; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; cursor: pointer; }
-        nav ul { display: flex; list-style: none; gap: 2rem; }
-        nav a { color: white; text-decoration: none; transition: color 0.3s; font-weight: 500; }
-        nav a:hover { color: #667eea; }
-        .language-switcher { display: flex; gap: 0.5rem; background: rgba(255,255,255,0.1); padding: 0.5rem; border-radius: 25px; }
-        .lang-btn { background: transparent; color: white; border: 2px solid transparent; padding: 0.4rem 1rem; border-radius: 20px; cursor: pointer; transition: all 0.3s; font-weight: 600; font-size: 0.9rem; }
-        .lang-btn.active { background: #667eea; color: white; border-color: #667eea; }
-        .lang-btn:hover { opacity: 0.9; }
         .container { max-width: 900px; margin: 3rem auto; padding: 1rem; }
         h1 { font-size:2.4rem; margin-bottom:1rem; color:#667eea; }
         .section { background:#16213e; border:1px solid rgba(102,126,234,0.3); border-radius: 14px; padding: 1.5rem; margin-bottom:1.5rem; }
@@ -73,142 +66,6 @@
     </div>
     <footer>&copy; 2026 Nhywyll · All rights reserved | <a href="imprint.html" data-i18n="imprint_link">Imprint</a></footer>
     
-    <script>
-        const translations = {
-            en: {
-                page_title: "Nhywyll - VTuber Streamer & Content Creator",
-                nav_home: "Home",
-                nav_streams: "Socials",
-                nav_contact: "Contact",
-                imprint_link: "Imprint",
-                hero_title: "Welcome to Nhywyll's Channel",
-                hero_subtitle: "VTuber Streamer, Content Creator & Digital Artist",
-                btn_twitch: "🎮 Twitch",
-                btn_youtube: "📺 YouTube",
-                btn_contact: "📩 Contact",
-                about_title: "About Nhywyll",
-                about_subtitle: "Meet Your Favorite VTuber",
-                about_p1: "Hi! I'm Nhywyll, a passionate VTuber and content creator dedicated to bringing entertainment and creativity to the streaming community. With years of experience in digital art and character design, I craft immersive experiences for my audience.",
-                about_p2: "When I'm not streaming, I'm working on exciting projects, collaborating with other creators, and engaging with my amazing community. I believe in creating content that's not just entertaining, but also meaningful and inclusive.",
-                about_stats_streams: "1000+",
-                about_stats_streams_desc: "Streaming Hours",
-                streams_title: "What I Stream",
-                stream_gaming: "Gaming",
-                stream_gaming_desc: "Join me for exciting gaming sessions featuring story-driven games, indie titles, and community challenges.",
-                stream_art: "Digital Art",
-                stream_art_desc: "Watch me create stunning digital artwork, design characters, and explore creative techniques in real-time.",
-                stream_chat: "Chat & Community",
-                stream_chat_desc: "Casual streams dedicated to connecting with my community, answering questions, and just having fun together.",
-                services_title: "Services & Collaborations",
-                service_design: "Character Design",
-                service_design_desc: "Custom VTuber model design, character concepts, and digital artwork for content creators and brands.",
-                service_collab: "Collaborations",
-                service_collab_desc: "I'm open to collaborations with other streamers, artists, and brands. Let's create something amazing together!",
-                service_consulting: "Consulting",
-                service_consulting_desc: "Need advice on content creation or VTubing? I offer consulting sessions for aspiring streamers and creators.",
-                contact_title: "Get In Touch",
-                contact_email: "Email",
-                contact_business: "Business Inquiries",
-                contact_social: "Follow Me On Social Media"
-            },
-            de: {
-                page_title: "Nhywyll - VTuber Streamer & Content Creator",
-                nav_home: "Startseite",
-                nav_streams: "Socials",
-                nav_contact: "Kontakt",
-                imprint_link: "Impressum",
-                hero_title: "Willkommen auf Nhywyll's Kanal",
-                hero_subtitle: "VTuber Streamer, Content Creator & Digital Artist",
-                btn_twitch: "🎮 Twitch",
-                btn_youtube: "📺 YouTube",
-                btn_contact: "📩 Kontakt",
-                about_title: "Über Nhywyll",
-                about_subtitle: "Lerne deinen Lieblings-VTuber kennen",
-                about_p1: "Hallo! Ich bin Nhywyll, ein leidenschaftlicher VTuber und Content Creator, der sich der Unterhaltung und Kreativität in der Streaming-Community widmet. Mit Jahren an Erfahrung in digitaler Kunst und Charakterdesign schaffe ich immersive Erlebnisse für mein Publikum.",
-                about_p2: "Wenn ich nicht streame, arbeite ich an spannenden Projekten, kollaboriere mit anderen Creators und engagiere mich in meiner fantastischen Community. Ich glaube daran, Inhalte zu schaffen, die nicht nur unterhaltsam sind, sondern auch sinnvoll und inklusiv.",
-                about_stats_streams: "1000+",
-                about_stats_streams_desc: "Streaming Stunden",
-                streams_title: "Das streame ich",
-                stream_gaming: "Gaming",
-                stream_gaming_desc: "Begleite mich auf aufregenden Gaming-Sessions mit Story-Spielen, Indie-Titeln und Community Challenges.",
-                stream_art: "Digitale Kunst",
-                stream_art_desc: "Beobachte mich dabei, wie ich atemberaubende digitale Kunstwerke erstelle und Charaktere in Echtzeit gestalte.",
-                stream_chat: "Chat & Community",
-                stream_chat_desc: "Casual Streams gewidmet der Verbindung mit meiner Community und einfach nur zum Spaß haben.",
-                services_title: "Services & Kooperationen",
-                service_design: "Charakterdesign",
-                service_design_desc: "Individuelles VTuber-Modelldesign, Charakterkonzepte und digitale Kunstwerke für Content Creator und Marken.",
-                service_collab: "Kooperationen",
-                service_collab_desc: "Ich bin offen für Kooperationen mit anderen Streamern, Künstlern und Marken. Lasst uns zusammen etwas Großartiges schaffen!",
-                service_consulting: "Beratung",
-                service_consulting_desc: "Benötigst du Rat beim Content Creation oder VTubing? Ich biete Beratungssitzungen für angehende Streamer an.",
-                contact_title: "Kontaktiere Mich",
-                contact_email: "E-Mail",
-                contact_business: "Geschäftliche Anfragen",
-                contact_social: "Folge mir auf Social Media"
-            }
-        };
-        
-        let currentLanguage = localStorage.getItem('language') || 'en';
-        
-        // Check URL parameter
-        const urlParams = new URLSearchParams(window.location.search);
-        const langFromUrl = urlParams.get('lang');
-        if (langFromUrl && (langFromUrl === 'en' || langFromUrl === 'de')) {
-            currentLanguage = langFromUrl;
-            localStorage.setItem('language', currentLanguage);
-        }
-        
-        function setLanguage(lang) {
-            currentLanguage = lang;
-            localStorage.setItem('language', lang);
-            document.documentElement.lang = lang;
-            
-            document.querySelectorAll('[data-i18n]').forEach(element => {
-                const key = element.getAttribute('data-i18n');
-                if (translations[lang][key]) {
-                    if (element.tagName === 'TITLE') {
-                        element.textContent = translations[lang][key];
-                    } else {
-                        element.textContent = translations[lang][key];
-                    }
-                }
-            });
-            
-            document.querySelectorAll('.lang-btn').forEach(btn => {
-                btn.classList.remove('active');
-                if (btn.getAttribute('data-lang') === lang) {
-                    btn.classList.add('active');
-                }
-            });
-            
-            // Update URL
-            const url = new URL(window.location);
-            url.searchParams.set('lang', lang);
-            history.replaceState(null, '', url.toString());
-            
-            // Update nav links
-            updateLinks();
-        }
-        
-        function updateLinks() {
-            const links = document.querySelectorAll('nav a');
-            links.forEach(link => {
-                if (link.href.includes('index.html') || link.href.includes('contact.html') || link.href.includes('social.html') || link.href.includes('imprint.html')) {
-                    const url = new URL(link.href);
-                    url.searchParams.set('lang', currentLanguage);
-                    link.href = url.toString();
-                }
-            });
-        }
-        
-        document.querySelectorAll('.lang-btn').forEach(btn => {
-            btn.addEventListener('click', () => {
-                setLanguage(btn.getAttribute('data-lang'));
-            });
-        });
-        
-        setLanguage(currentLanguage);
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
