@@ -1,14 +1,14 @@
 /* CSS Custom Properties for Themes */
 :root {
-    --bg-primary: #0f0f0f;
-    --bg-secondary: #1a1a2e;
+    --bg-primary: #0a0a0a;
+    --bg-secondary: #13142b;
     --bg-card: #16213e;
-    --text-primary: #e0e0e0;
-    --text-secondary: #ccc;
-    --text-muted: #888;
-    --accent-primary: #667eea;
-    --accent-secondary: #764ba2;
-    --border-color: rgba(102, 126, 234, 0.2);
+    --text-primary: #f1f3f9;
+    --text-secondary: #c7cddf;
+    --text-muted: #9da4ba;
+    --accent-primary: #8ac6ff;
+    --accent-secondary: #a9d8ff;
+    --border-color: rgba(138, 198, 255, 0.35);
 }
 
 html.light-theme,
@@ -35,6 +35,33 @@ body.light-theme {
     --accent-primary: #495057;
     --accent-secondary: #6c757d;
     --border-color: rgba(0, 0, 0, 0.1);
+}
+
+/* Skip link */
+.skip-link {
+    position: absolute;
+    top: -45px;
+    left: 1rem;
+    background-color: var(--accent-primary);
+    color: #fff;
+    padding: 0.4rem 0.8rem;
+    border-radius: 6px;
+    z-index: 10000;
+    text-decoration: none;
+    font-weight: 600;
+    transition: top 0.2s ease, opacity 0.2s ease;
+    opacity: 0;
+}
+.skip-link:focus,
+.skip-link:active {
+    top: 1rem;
+    opacity: 1;
+}
+
+/* Main content focus (subtle) */
+#main-content:focus {
+    outline: 2px solid var(--accent-primary);
+    outline-offset: 2px;
 }
 
 /* Accessibility: Focus styles for keyboard navigation */
@@ -607,17 +634,20 @@ a.cta:hover {
 }
 
 .links-card a {
-    color: #8ac6ff;
+    color: #ffffff;
     display: inline-block;
     margin-top: 0.5rem;
-    text-decoration: none;
+    text-decoration: underline;
+    text-underline-offset: 3px;
     border: 1px solid var(--accent-primary);
+    background: rgba(102, 126, 234, 0.15);
     padding: 0.5rem 1rem;
     border-radius: 8px;
 }
 
 .links-card a:hover {
-    background: rgba(102, 126, 234, 0.2);
+    background: rgba(102, 126, 234, 0.3);
+    color: #fff;
 }
 
 nav ul {
@@ -628,16 +658,20 @@ nav ul {
 
 nav a {
     color: var(--text-primary);
-    text-decoration: none;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    text-decoration-color: rgba(255,255,255,0.7);
     transition: color 0.3s, transform 0.2s;
     font-weight: 500;
     position: relative;
     padding-bottom: 5px;
 }
 
-nav a:hover {
+nav a:hover,
+nav a:focus {
     color: var(--accent-primary);
     transform: translateY(-2px);
+    text-decoration-color: #8ac6ff;
 }
 
 nav a::after {
@@ -816,6 +850,122 @@ footer a:hover {
     transform: scale(1.1) rotate(5deg); /* Kleiner Effekt beim Drüberfahren */
 }
 /* === START Styling für Partner/Affiliate Section === */
+
+/* Credits page styles */
+.artist-section h2 {
+    color: var(--text-primary);
+    margin-bottom: 2rem;
+}
+
+.artist-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.artist-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 1.5rem;
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.artist-card:hover {
+    transform: translateY(-5px);
+}
+
+.artist-card a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.artist-card img {
+    width: 100%;
+    max-width: 200px;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+
+.artist-card h3 {
+    color: var(--accent-primary);
+    margin-bottom: 0.5rem;
+}
+
+.artist-card p {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+.other-credits {
+    margin-top: 3rem;
+}
+
+.other-credits h2 {
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+}
+
+.other-credits ul {
+    list-style: none;
+    padding: 0;
+}
+
+.other-credits li {
+    color: var(--text-secondary);
+    margin-bottom: 0.5rem;
+}
+
+/* Loading spinner */
+.loader {
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid var(--accent-primary);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+    margin: 0 auto;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Cookie Banner */
+.cookie-banner {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: var(--bg-card);
+    border-top: 1px solid var(--border-color);
+    padding: 1rem;
+    text-align: center;
+    z-index: 1000;
+    display: none; /* Versteckt, bis JS es zeigt */
+}
+
+.cookie-banner p {
+    color: var(--text-primary);
+    margin: 0;
+}
+
+.cookie-banner button {
+    background: var(--accent-primary);
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-left: 1rem;
+}
+
+.cookie-banner button:hover {
+    background: var(--accent-secondary);
+}
 
 .partner-section {
     margin-top: 3rem; /* Abstand nach oben zur Social-Grid */

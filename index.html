@@ -22,6 +22,14 @@
     </script>
     <title data-i18n="page_title">Nhywyll - VTuber Streamer & Content Creator</title>
     <link rel="stylesheet" href="styles.css">
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-8V220HC158"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-8V220HC158');
+    </script>
 </head>
 <body>
     <a href="#main-content" class="skip-link">Skip to main content</a>
@@ -33,6 +41,7 @@
                 <li><a href="schedule.html" data-i18n="nav_schedule">Schedule</a></li>
                 <li><a href="links.html" data-i18n="nav_links">Links</a></li>
                 <li><a href="contact.html" data-i18n="nav_contact">Contact</a></li>
+                <li><a href="credits.html">Credits</a></li>
             </ul>
             <div class="language-switcher">
                 <button class="lang-btn active" data-lang="en" aria-label="Switch to English">EN</button>
@@ -43,8 +52,9 @@
         <p class="nav-slogan" data-i18n="about_subtitle">VTuber • Streamer • Content Creator</p>
     </header>
 
-    <div class="about-content">
-        <div class="about-text">
+    <main id="main-content" tabindex="-1">
+        <div class="about-content">
+            <div class="about-text">
             <h2 data-i18n="who_i_am_title">Who I Am</h2>
             <p data-i18n="who_i_am_text1">Hi there! I'm Nhywyll, a passionate VTuber and content creator who loves bringing joy and creativity to the streaming community. With years of experience in digital art and character design, I create immersive experiences that connect with my audience on a deeper level.</p>
 
@@ -59,10 +69,17 @@
         </div>
     </div>
 
+    </main>
+
     <footer>&copy; 2026 Nhywyll · All rights reserved | <a href="imprint.html" data-i18n="imprint_link">Imprint</a></footer>
 
     <button class="back-to-top" aria-label="Back to top" title="Scroll to top">↑</button>
 
     <script src="script.js"></script>
+
+    <!-- Cookie Banner -->
+    <div id="cookie-banner" class="cookie-banner">
+        <p>This site uses cookies for analytics. <button id="accept-cookies">Accept</button></p>
+    </div>
 </body>
 </html>

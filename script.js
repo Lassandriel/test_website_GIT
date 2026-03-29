@@ -334,3 +334,37 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         }
     });
 });
+
+// Back-to-top button behavior
+const backToTop = document.querySelector('.back-to-top');
+if (backToTop) {
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 250) {
+            backToTop.classList.add('show');
+        } else {
+            backToTop.classList.remove('show');
+        }
+    });
+
+    backToTop.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+        backToTop.blur();
+    });
+}
+
+// Cookie Banner Logic
+const cookieBanner = document.getElementById('cookie-banner');
+const acceptCookiesBtn = document.getElementById('accept-cookies');
+
+if (cookieBanner && acceptCookiesBtn) {
+    // Show banner if not accepted
+    if (!localStorage.getItem('cookiesAccepted')) {
+        cookieBanner.style.display = 'block';
+    }
+
+    acceptCookiesBtn.addEventListener('click', () => {
+        localStorage.setItem('cookiesAccepted', 'true');
+        cookieBanner.style.display = 'none';
+        // Hier könntest du Analytics aktivieren
+    });
+}

@@ -20,6 +20,7 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
     <header>
         <nav>
             <a href="index.html" class="logo-link"><img src="images/Logo.png" alt="Nhywyll Logo" class="logo" loading="eager"></a>
@@ -28,6 +29,7 @@
                 <li><a href="schedule.html" data-i18n="nav_schedule">Schedule</a></li>
                 <li><a href="links.html" data-i18n="nav_links">Links</a></li>
                 <li><a href="contact.html" data-i18n="nav_contact">Contact</a></li>
+                <li><a href="credits.html">Credits</a></li>
             </ul>
             <div class="language-switcher">
                 <button class="lang-btn active" data-lang="en" aria-label="Switch to English">EN</button>
@@ -36,6 +38,7 @@
             <button id="theme-toggle" class="theme-btn" aria-label="Toggle theme" title="Toggle between dark and light theme">🌙</button>
         </nav>
     </header>
+    <main id="main-content" tabindex="-1">
     <div class="container">
         <h1 data-i18n="contact_title">Contact & Collaboration</h1>
         <div class="section">
@@ -58,6 +61,8 @@
             </form>
         </div>
     </div>
+    </main>
+    <button class="back-to-top" aria-label="Back to top" title="Move to top">↑</button>
     <footer>&copy; 2026 Nhywyll · All rights reserved | <a href="imprint.html" data-i18n="imprint_link">Imprint</a></footer>
     
     <script src="script.js"></script>
