@@ -686,7 +686,7 @@ nav a:hover {
 
 .lang-btn {
     background: transparent;
-    color: white;
+    color: var(--text-primary);
     border: 2px solid transparent;
     padding: 0.4rem 1rem;
     border-radius: 20px;
