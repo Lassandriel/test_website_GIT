@@ -48,6 +48,13 @@ test_website/
 ├── images/             # Images and logos
 └── README.md           # This file
 ```
+## 💜 Twitch API
+Twitch API Cliend Id: y021uozyhz8nt1lgox3la49ckbzdpd
+API Endpoint: https://api.twitch.tv/helix/streams?user_login=nhywyll
+Twitch API Docs: https://dev.twitch.tv/docs/api/reference#get-streams
+
+>> Noch nicht implementiert, da ich erst die Grundlagen der Seite fertigstellen wollte. Aber geplant ist es definitiv, den Twitch API Endpoint zu integrieren, um den Live-Status direkt auf der Startseite anzuzeigen.
+
 
 ## ⚖️ Legal & Privacy
 This repository contains the frontend code for my private/commercial hybrid project, intended mostly as a personal portfolio.
