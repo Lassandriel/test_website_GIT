@@ -34,6 +34,7 @@ test_website/
 ├── links.html          # Social links & partners
 ├── contact.html        # Contact & collaboration
 ├── imprint.html        # Imprint & privacy
+├── credits.html        # Credits & acknowledgments
 ├── styles.css          # Main stylesheet
 ├── script.js           # JavaScript for interactivity
 ├── images/             # Images and logos

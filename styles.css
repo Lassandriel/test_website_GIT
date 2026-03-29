@@ -942,29 +942,57 @@ footer a:hover {
     width: 100%;
     background: var(--bg-card);
     border-top: 1px solid var(--border-color);
-    padding: 1rem;
+    padding: 0.75rem 1rem;
     text-align: center;
-    z-index: 1000;
+    z-index: 999;
     display: none; /* Versteckt, bis JS es zeigt */
 }
 
 .cookie-banner p {
     color: var(--text-primary);
     margin: 0;
+    font-size: 0.9rem;
 }
 
 .cookie-banner button {
     background: var(--accent-primary);
     color: white;
     border: none;
-    padding: 0.5rem 1rem;
+    padding: 0.4rem 0.8rem;
     border-radius: 4px;
     cursor: pointer;
-    margin-left: 1rem;
+    margin-left: 0.5rem;
+    font-size: 0.9rem;
 }
 
 .cookie-banner button:hover {
     background: var(--accent-secondary);
+}
+
+/* Adjust body when banner is visible */
+body.cookie-banner-visible {
+    margin-bottom: 50px;
+}
+
+/* Email links */
+.email-link {
+    color: var(--accent-primary);
+    text-decoration: none;
+}
+
+.email-link:hover {
+    color: var(--accent-secondary);
+}
+
+/* Social subtitle */
+.social-subtitle {
+    margin-bottom: 1.5rem;
+    color: var(--text-secondary);
+}
+
+/* Partner title */
+.partner-title {
+    margin-top: 2rem;
 }
 
 .partner-section {

@@ -32,10 +32,10 @@ const translations = {
         status_offline: "Offline",
         contact_title: "Contact & Collaboration",
         contact_business_title: "Business & Partnership",
-        contact_business_email: "Email: <a href='mailto:nhywyll@outlook.com' style='color:#8ac6ff;'>nhywyll@outlook.com</a>",
+        contact_business_email: "Email: <a href='mailto:nhywyll@outlook.com' class='email-link'>nhywyll@outlook.com</a>",
         contact_business_text: "Branding requests, sponsorships, and creative collabs are welcomed.",
         contact_fan_title: "Fan & Stream Support",
-        contact_fan_email: "Email: <a href='mailto:nhywyll@outlook.com' style='color:#8ac6ff;'>nhywyll@outlook.com</a>",
+        contact_fan_email: "Email: <a href='mailto:nhywyll@outlook.com' class='email-link'>nhywyll@outlook.com</a>",
         contact_fan_text: "Questions about schedule, song requests, or community events.",
         contact_quick_title: "Quick Message",
         contact_label_name: "Name",
@@ -124,10 +124,10 @@ const translations = {
         status_offline: "Offline",
         contact_title: "Kontakt & Zusammenarbeit",
         contact_business_title: "Business & Partnerschaft",
-        contact_business_email: "E-Mail: <a href='mailto:nhywyll@outlook.com' style='color:#8ac6ff;'>nhywyll@outlook.com</a>",
+        contact_business_email: "E-Mail: <a href='mailto:nhywyll@outlook.com' class='email-link'>nhywyll@outlook.com</a>",
         contact_business_text: "Anfragen für Zusammenarbeit, Sponsoring und kreative Partnerschaften sind willkommen.",
         contact_fan_title: "Fan- & Stream-Support",
-        contact_fan_email: "E-Mail: <a href='mailto:nhywyll@outlook.com' style='color:#8ac6ff;'>nhywyll@outlook.com</a>",
+        contact_fan_email: "E-Mail: <a href='mailto:nhywyll@outlook.com' class='email-link'>nhywyll@outlook.com</a>",
         contact_fan_text: "Fragen zum Zeitplan, Songwünschen oder Community-Events.",
         contact_quick_title: "Schnelle Nachricht",
         contact_label_name: "Name",
@@ -286,16 +286,16 @@ if (contactForm) {
 function setTheme(theme) {
     currentTheme = theme;
     localStorage.setItem('theme', theme);
-    document.body.dataset.theme = theme;
+    document.documentElement.dataset.theme = theme;
 
     const themeToggleBtn = document.getElementById('theme-toggle');
 
     if (theme === 'light') {
-        document.body.classList.add('light-theme');
+        document.documentElement.classList.add('light-theme');
         themeToggleBtn.textContent = '☀️';
         themeToggleBtn.setAttribute('aria-label', 'Switch to dark theme');
     } else {
-        document.body.classList.remove('light-theme');
+        document.documentElement.classList.remove('light-theme');
         themeToggleBtn.textContent = '🌙';
         themeToggleBtn.setAttribute('aria-label', 'Switch to light theme');
     }
@@ -309,7 +309,7 @@ function setTheme(theme) {
     updateLinks();
 
     // Enable smooth theme transitions after the initial theme is applied
-    document.body.classList.add('theme-loaded');
+    document.documentElement.classList.add('theme-loaded');
 }
 
 const themeToggle = document.getElementById('theme-toggle');
@@ -352,19 +352,37 @@ if (backToTop) {
     });
 }
 
-// Cookie Banner Logic
-const cookieBanner = document.getElementById('cookie-banner');
-const acceptCookiesBtn = document.getElementById('accept-cookies');
+// Cookie Banner - Create and insert centrally
+function createCookieBanner() {
+    const bannerHTML = `
+    <div id="cookie-banner" class="cookie-banner">
+        <p>This site uses cookies for analytics. <button id="accept-cookies">Accept</button></p>
+    </div>
+    `;
+    
+    // Insert before closing body tag
+    document.body.insertAdjacentHTML('beforeend', bannerHTML);
+    
+    const cookieBanner = document.getElementById('cookie-banner');
+    const acceptCookiesBtn = document.getElementById('accept-cookies');
 
-if (cookieBanner && acceptCookiesBtn) {
     // Show banner if not accepted
     if (!localStorage.getItem('cookiesAccepted')) {
         cookieBanner.style.display = 'block';
+        document.body.classList.add('cookie-banner-visible');
     }
 
     acceptCookiesBtn.addEventListener('click', () => {
         localStorage.setItem('cookiesAccepted', 'true');
         cookieBanner.style.display = 'none';
+        document.body.classList.remove('cookie-banner-visible');
         // Hier könntest du Analytics aktivieren
     });
+}
+
+// Create cookie banner when DOM is ready
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', createCookieBanner);
+} else {
+    createCookieBanner();
 }
