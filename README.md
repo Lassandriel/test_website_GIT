@@ -17,17 +17,8 @@ This website is a responsive, multilingual landing page for Nhywyll, a VTuber st
 - **GitHub Pages**: Hosting
 
 ## ✨ Features
-- [x] **Responsive Design**: Optimized for mobile, tablet, and desktop
-- [x] **Dark/Light Mode**: Automatic theme detection with localStorage
-- [x] **Multilingual (EN/DE)**: Full internationalization
-- [x] **Accessibility**: WCAG 2.1 AA compliant, screen-reader friendly
-- [x] **SEO Optimized**: Meta tags, Open Graph, sitemap
-- [x] **Contact Form**: Mailto integration for direct emails
-- [x] **Back-to-Top Button**: With smooth scrolling
-- [x] **Skip Links**: For screen readers
-- [x] **Social Links**: Twitch, YouTube, Discord, etc.
-- [x] **Partners & Affiliates**: Affiliate links
-- [ ] **Twitch API Live Status**: Future feature
+- [x] **Performance-Optimierung**: Bilder mit Lazy Loading, komprimiert (TinyPNG empfohlen)
+- [x] **Mobile und Accessibility**: Responsive, ARIA-Labels hinzugefügt, Farbkontraste geprüft
 
 
 ### Testing Theme & Language
@@ -48,12 +39,6 @@ test_website/
 ├── images/             # Images and logos
 └── README.md           # This file
 ```
-## 💜 Twitch API
-Twitch API Cliend Id: y021uozyhz8nt1lgox3la49ckbzdpd
-API Endpoint: https://api.twitch.tv/helix/streams?user_login=nhywyll
-Twitch API Docs: https://dev.twitch.tv/docs/api/reference#get-streams
-
->> Noch nicht implementiert, da ich erst die Grundlagen der Seite fertigstellen wollte. Aber geplant ist es definitiv, den Twitch API Endpoint zu integrieren, um den Live-Status direkt auf der Startseite anzuzeigen.
 
 
 ## ⚖️ Legal & Privacy
